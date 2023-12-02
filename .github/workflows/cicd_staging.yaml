@@ -7,7 +7,7 @@ run-name: |
       on branch ${{github.repository}}" 
 
 on: 
-pull_request: 
+push: 
    branches: 
      - features 
 workflow_dispatch: 

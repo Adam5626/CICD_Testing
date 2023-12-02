@@ -21,8 +21,9 @@ jobs:
     - name: Checkout the files
       uses: actions/checkout@v4
       run: npm install
-      run: npm run test-API
-      run: npm run test-react
+    - run:|
+    npm run test-API
+    npm run test-react
 
     - name: Deploy to Testing Server
     uses: easingthemes/ssh-deploy@main

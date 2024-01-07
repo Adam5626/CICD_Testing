@@ -22,7 +22,6 @@ jobs:
       run: npm install
       run: npm run test-API
       run: npm run test-react
-
     - name: Deploy to Testing Server
       uses: easingthemes/ssh-deploy@main
       env:
@@ -30,7 +29,6 @@ jobs:
             REMOTE_HOST: ${ { secrets.HOST_DNS_STAGING}}
             REMOTE_USER: ${ { secrets.USERNAME_TESTING}}
             TARGET: ${ { secrets.TARGET_DIR_TESTING}}
-    
     - name: Send mail
       if: always()
       uses: dawidd6/action-send-mail@v2
@@ -48,7 +46,6 @@ jobs:
             to: u2020261@giki.edu.pk,sajid.ali@giki.edu.pk
             # from email name
             from: Adam Saleem
-
       - name: Check code coverage
         uses: codecov/codecov-action@v3
         with:
